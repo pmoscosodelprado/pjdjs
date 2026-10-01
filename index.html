@@ -339,6 +339,45 @@ img{max-width:100%}
  .pj-gallery>.pj-gallery-logo .pj-gallery-spin-logo{width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:1/1!important;object-fit:contain!important;padding:0!important;border-radius:50%!important}
 }
 </style>
+
+<style id="pj-final-mobile-overrides">
+@media(max-width:600px){
+  /* Gallery: preserve photos, but give the PJ.DJS logo its own uncropped slide */
+  .pj-who .pj-gallery>.pj-gallery-logo{
+    flex:0 0 82vw!important;width:82vw!important;height:82vw!important;
+    max-width:330px!important;max-height:330px!important;
+    margin-left:0!important;padding:0!important;overflow:visible!important;
+    background:transparent!important;border-radius:0!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    scroll-snap-align:center!important;
+  }
+  .pj-who .pj-gallery>.pj-gallery-logo>img.pj-gallery-spin-logo{
+    width:92%!important;height:92%!important;max-width:310px!important;max-height:310px!important;
+    aspect-ratio:1/1!important;object-fit:contain!important;object-position:center!important;
+    padding:0!important;margin:0!important;background:transparent!important;border-radius:0!important;
+    transform:rotate(0deg)!important;
+  }
+  .pj-who .pj-gallery>.pj-gallery-logo>img.pj-gallery-spin-logo.pj-spinning{
+    transform:rotate(360deg)!important;
+  }
+
+  /* Venue logos: maximize optical size. These are deliberately last in cascade. */
+  .pj-where .pj-where-logos>div{
+    min-height:122px!important;height:122px!important;padding:2px!important;
+    overflow:hidden!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  }
+  .pj-where .pj-where-logos>div>img{
+    width:100%!important;height:112px!important;max-width:none!important;max-height:none!important;
+    object-fit:contain!important;object-position:center!important;
+  }
+  .pj-where .pj-where-logos>div>img[src$="asset-005.webp"]{transform:scale(1.24)!important}
+  .pj-where .pj-where-logos>div>img[src$="asset-001.png"]{transform:scale(1.30)!important}
+  .pj-where .pj-where-logos>div>img[src$="asset-012-opt.png"]{transform:scale(1.30)!important}
+  .pj-where .pj-where-logos>div>img[src$="asset-013-opt.png"]{transform:scale(1.27)!important}
+  .pj-where .pj-where-logos>div>img[src$="asset-006.jpg"]{transform:scale(1.85)!important}
+  .pj-where .pj-where-logos>div>img[src$="asset-010.png"]{transform:scale(1.32)!important}
+}
+</style>
 </head>
 <body>
 <main style="width:100%;max-width:1400px;margin:0 auto;background:#0b0b0b;position:relative;font-family:'Space Grotesk',sans-serif;color:#f7f5f0;overflow:hidden;box-sizing:border-box;">
@@ -709,6 +748,16 @@ img{max-width:100%}
   el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();spin();});
   el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();spin();}});
  });
+})();
+</script>
+
+<script id="pj-logo-link-guard">
+(function(){
+ var logo=document.querySelector('.pj-gallery-spin-logo');
+ if(!logo)return;
+ var a=logo.closest('a');
+ if(a){var d=document.createElement('div');d.className='pj-gallery-logo';d.innerHTML=a.innerHTML;a.replaceWith(d);logo=d.querySelector('.pj-gallery-spin-logo');}
+ if(logo){logo.onclick=function(e){e.preventDefault();e.stopPropagation();this.classList.remove('pj-spinning');void this.offsetWidth;this.classList.add('pj-spinning');var el=this;setTimeout(function(){el.classList.remove('pj-spinning');},950);return false;};}
 })();
 </script>
 </body>

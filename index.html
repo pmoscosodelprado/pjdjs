@@ -401,6 +401,24 @@ img{max-width:100%}
  }
 }
 </style>
+
+<style id="pj-logo-circle-final">
+@media(max-width:600px){
+ .pj-who .pj-gallery>.pj-gallery-logo{
+   border-radius:50%!important;
+   overflow:hidden!important;
+   background:#000!important;
+   isolation:isolate!important;
+ }
+ .pj-who .pj-gallery>.pj-gallery-logo>img.pj-gallery-spin-logo{
+   width:100%!important;height:100%!important;
+   object-fit:cover!important;object-position:center!important;
+   border-radius:50%!important;
+   clip-path:circle(50% at 50% 50%)!important;
+   -webkit-clip-path:circle(50% at 50% 50%)!important;
+ }
+}
+</style>
 </head>
 <body>
 <main style="width:100%;max-width:1400px;margin:0 auto;background:#0b0b0b;position:relative;font-family:'Space Grotesk',sans-serif;color:#f7f5f0;overflow:hidden;box-sizing:border-box;">

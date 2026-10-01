@@ -378,6 +378,29 @@ img{max-width:100%}
   .pj-where .pj-where-logos>div>img[src$="asset-010.png"]{transform:scale(1.32)!important}
 }
 </style>
+
+<style id="pj-logo-animation-final">
+@keyframes pjLogoTurn{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.pj-gallery-spin-logo{transform:rotate(0deg)!important;transform-origin:50% 50%!important}
+.pj-gallery-spin-logo.pj-spinning{animation:pjLogoTurn .85s cubic-bezier(.22,.9,.28,1) 1!important;transform:rotate(0deg)!important}
+@media(max-width:600px){
+ .pj-who .pj-gallery>.pj-gallery-logo{
+   flex:0 0 72vw!important;width:72vw!important;height:72vw!important;
+   max-width:300px!important;max-height:300px!important;
+   margin-left:0!important;padding:0!important;overflow:hidden!important;
+   border-radius:50%!important;background:#000!important;
+   display:flex!important;align-items:center!important;justify-content:center!important;
+   scroll-snap-align:center!important;position:relative!important;
+ }
+ .pj-who .pj-gallery>.pj-gallery-logo>img.pj-gallery-spin-logo{
+   display:block!important;width:100%!important;height:100%!important;
+   max-width:100%!important;max-height:100%!important;aspect-ratio:1/1!important;
+   object-fit:contain!important;object-position:center!important;
+   padding:0!important;margin:0!important;border-radius:50%!important;
+   position:relative!important;inset:auto!important;
+ }
+}
+</style>
 </head>
 <body>
 <main style="width:100%;max-width:1400px;margin:0 auto;background:#0b0b0b;position:relative;font-family:'Space Grotesk',sans-serif;color:#f7f5f0;overflow:hidden;box-sizing:border-box;">
@@ -758,6 +781,21 @@ img{max-width:100%}
  var a=logo.closest('a');
  if(a){var d=document.createElement('div');d.className='pj-gallery-logo';d.innerHTML=a.innerHTML;a.replaceWith(d);logo=d.querySelector('.pj-gallery-spin-logo');}
  if(logo){logo.onclick=function(e){e.preventDefault();e.stopPropagation();this.classList.remove('pj-spinning');void this.offsetWidth;this.classList.add('pj-spinning');var el=this;setTimeout(function(){el.classList.remove('pj-spinning');},950);return false;};}
+})();
+</script>
+
+<script id="pj-logo-animation-handler">
+(function(){
+ var el=document.querySelector('.pj-gallery-spin-logo');
+ if(!el)return;
+ el.onclick=function(e){
+   e.preventDefault();e.stopPropagation();
+   if(el.classList.contains('pj-spinning'))return false;
+   el.classList.add('pj-spinning');
+   return false;
+ };
+ el.addEventListener('animationend',function(){el.classList.remove('pj-spinning');});
+ el.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}};
 })();
 </script>
 </body>

@@ -244,6 +244,71 @@ img[src$="asset-011.jpg"]:hover{transform:rotate(4deg) scale(1.08)!important;box
 img[src$="asset-008.jpg"]:hover{transform:rotate(-3deg) scale(1.08)!important;box-shadow:10px 10px 0 rgba(0,0,0,0.22)!important;position:relative;z-index:2;}
 </style>
 
+
+<style id="pj-mobile-ux">
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%}
+.pj-mobile-actions,.pj-mobile-sticky,.pj-more-mixes{display:none}
+@media(max-width:600px){
+  body{overflow-x:hidden;padding-bottom:68px}
+  main{overflow-x:hidden!important}
+  .pj-hero{padding:20px 18px 0!important}
+  .pj-hero>div:first-child{align-items:center!important}
+  .pj-hero>div:first-child>div:first-child{gap:12px!important}
+  .pj-hero>div:first-child>div:last-child{font-size:17px!important;padding:10px 14px!important}
+  .pj-hero>div:nth-child(2){gap:24px!important;margin-top:24px!important}
+  .pj-hero>div:nth-child(2)>div:first-child{min-width:0!important;flex-basis:100%!important}
+  .pj-hero>div:nth-child(2)>div:first-child>div:first-child{font-size:clamp(42px,13.3vw,58px)!important;line-height:.91!important}
+  .pj-hero>div:nth-child(2)>div:first-child>div:nth-child(2){font-size:19px!important;margin-top:13px!important}
+  .pj-hero>div:nth-child(2)>div:first-child>div:nth-child(3){font-size:14px!important;margin-top:15px!important}
+  .pj-hero>div:nth-child(2)>div:last-child{min-width:0!important;flex-basis:100%!important}
+  .pj-hero>div:nth-child(2)>div:last-child img{border-width:7px!important;box-shadow:9px 9px 0 rgba(0,0,0,.5)!important}
+  .pj-mobile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px 0 8px}
+  .pj-mobile-actions a{min-height:52px;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:21px;letter-spacing:.5px;border:3px solid #f7f5f0}
+  .pj-mobile-actions a:first-child{background:#d4ff3d;color:#0b0b0b;border-color:#d4ff3d}
+  .pj-mobile-actions a:last-child{background:#ff2f92;color:#0b0b0b;border-color:#ff2f92}
+  .pj-who,.pj-where,.pj-services{padding:42px 18px!important}
+  .pj-music{padding-left:18px!important;padding-right:18px!important;padding-bottom:44px!important;gap:28px!important}
+  .pj-contact{padding:0 18px 38px!important}
+  .pj-who p{font-size:17px!important;line-height:1.55!important}
+  .pj-gallery{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:14px!important;margin-left:-18px!important;margin-right:-18px!important;padding:12px 18px 22px!important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .pj-gallery::-webkit-scrollbar{display:none}
+  .pj-gallery>div{flex:0 0 72vw!important;scroll-snap-align:center}
+  .pj-gallery img{width:100%!important;height:72vw!important;max-height:300px!important;object-fit:cover!important}
+  .pj-gallery>a{flex:0 0 72vw!important;min-height:150px;display:flex!important;align-items:center;justify-content:center;scroll-snap-align:center}
+  .pj-music>div:nth-child(2){border-left:0!important;border-top:2px solid #333;padding-left:0!important;padding-top:25px}
+  .pj-mix-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .pj-mix-grid>div:nth-child(n+4){display:none}
+  .pj-mix-grid.pj-expanded>div:nth-child(n+4){display:block}
+  .pj-mix-grid [role="button"]{padding:18px!important;gap:14px!important;min-height:116px}
+  .pj-mix-grid [role="button"]>div:first-child{width:58px!important;height:58px!important}
+  .pj-mix-grid [role="button"]>div:first-child>div{border-left-width:20px!important;border-top-width:12px!important;border-bottom-width:12px!important}
+  .pj-mix-grid [role="button"]>div:nth-child(2){min-width:0!important}
+  .pj-mix-grid [role="button"]>div:nth-child(3){font-size:17px!important}
+  .pj-more-mixes{display:block;width:100%;min-height:50px;margin-top:14px;background:transparent;color:#d4ff3d;border:2px dashed #d4ff3d;font-family:'Space Mono',monospace;font-weight:700;font-size:14px;letter-spacing:1px}
+  .pj-where-logos{display:grid!important;grid-template-columns:1fr 1fr!important;gap:16px!important;align-items:stretch!important}
+  .pj-where-logos>div{min-height:118px!important;padding:14px!important;display:flex!important;align-items:center!important;justify-content:center!important;transform:none!important}
+  .pj-where-logos img{width:100%!important;height:82px!important;object-fit:contain!important}
+  .pj-services-list{gap:12px!important}
+  .pj-services-list>div{font-size:16px!important;padding:13px 16px!important}
+  .pj-contact>div:nth-child(2){gap:26px!important}
+  .pj-contact-booking{order:-3;flex-basis:100%!important;border:3px solid #d4ff3d;padding:18px!important}
+  .pj-contact-instagram{order:-2}
+  .pj-contact-mix{order:-1}
+  .pj-contact-mix img[alt^="QR"]{display:none!important}
+  .pj-contact-logo{text-align:left!important}
+  .pj-contact-logo a{margin-left:0!important}
+  .pj-mobile-sticky{position:fixed;z-index:9999;left:0;right:0;bottom:0;height:62px;display:grid;grid-template-columns:1fr 1fr;background:#0b0b0b;border-top:2px solid #f7f5f0;transition:transform .25s ease}
+  .pj-mobile-sticky.pj-hidden{transform:translateY(110%)}
+  .pj-mobile-sticky a{display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.6px}
+  .pj-mobile-sticky a:first-child{background:#d4ff3d;color:#0b0b0b}
+  .pj-mobile-sticky a:last-child{background:#ff2f92;color:#0b0b0b}
+  a,[role="button"],button{touch-action:manipulation}
+  [role="button"],button,.pj-contact a{min-height:44px}
+  iframe{max-width:100%;height:300px!important}
+}
+</style>
 </head>
 <body>
 <main style="width:100%;max-width:1400px;margin:0 auto;background:#0b0b0b;position:relative;font-family:'Space Grotesk',sans-serif;color:#f7f5f0;overflow:hidden;box-sizing:border-box;">
@@ -551,6 +616,49 @@ img[src$="asset-008.jpg"]:hover{transform:rotate(-3deg) scale(1.08)!important;bo
   wire('pj-queer', 'https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=0&feed=%2FPJDJs%2Fqueer-bear-tech-house-set%2F', '#ff2f92', '#f7f5f0');
   wire('pj-honey', 'https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=0&feed=%2FPJDJs%2Fhoney-bears-club-mix-pop-remixes-with-an-indie-twist%2F', '#d4ff3d', '#0b0b0b');
   wire('pj-honey2', 'https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&light=0&feed=%2FPJDJs%2Fhoney-bears-club-mix-vol-2%2F', '#9b5cff', '#f7f5f0');
+})();
+</script>
+
+<script id="pj-mobile-ux-js">
+(function(){
+  function sectionAfter(label){
+    var comments=document.createTreeWalker(document.body,NodeFilter.SHOW_COMMENT);
+    var n; while(n=comments.nextNode()){if(n.nodeValue.indexOf(label)>-1)return n.nextElementSibling;} return null;
+  }
+  var hero=sectionAfter('HERO'),who=sectionAfter('WHO WE ARE'),music=sectionAfter('MUSIC'),where=sectionAfter('WHERE WE PLAY'),services=sectionAfter('SERVICES'),contact=sectionAfter('CONTACT');
+  if(hero) hero.classList.add('pj-hero');
+  if(who){
+    who.classList.add('pj-who');
+    var imgs=['asset-002.jpg','asset-003.jpg','asset-011.jpg','asset-008.jpg'];
+    var first=who.querySelector('img[src$="'+imgs[0]+'"]');
+    if(first&&first.parentElement&&first.parentElement.parentElement) first.parentElement.parentElement.classList.add('pj-gallery');
+  }
+  if(music){
+    music.classList.add('pj-music');
+    var card=document.getElementById('pj-playlist');
+    var grid=card&&card.parentElement&&card.parentElement.parentElement;
+    if(grid){
+      grid.classList.add('pj-mix-grid');
+      var more=document.createElement('button'); more.type='button'; more.className='pj-more-mixes'; more.textContent='SHOW MORE SETS ↓'; more.setAttribute('aria-expanded','false');
+      more.onclick=function(){var on=grid.classList.toggle('pj-expanded');more.textContent=on?'SHOW LESS SETS ↑':'SHOW MORE SETS ↓';more.setAttribute('aria-expanded',on?'true':'false');};
+      grid.parentNode.insertBefore(more,grid.nextSibling);
+    }
+  }
+  if(where){where.classList.add('pj-where');var wl=where.children[1];if(wl)wl.classList.add('pj-where-logos');}
+  if(services){services.classList.add('pj-services');var sl=services.children[1];if(sl)sl.classList.add('pj-services-list');}
+  if(contact){
+    contact.classList.add('pj-contact');
+    var cols=contact.children[1]&&contact.children[1].children;
+    if(cols){for(var i=0;i<cols.length;i++){var t=cols[i].textContent;if(t.indexOf('BOOKING')>-1)cols[i].classList.add('pj-contact-booking');else if(t.indexOf('INSTAGRAM')>-1)cols[i].classList.add('pj-contact-instagram');else if(t.indexOf('LATEST MIX')>-1)cols[i].classList.add('pj-contact-mix');else cols[i].classList.add('pj-contact-logo');}}
+  }
+  if(hero){
+    var actions=document.createElement('div');actions.className='pj-mobile-actions';
+    actions.innerHTML='<a href="#pj-playlist">♫ LISTEN</a><a href="https://wa.me/34696092224">BOOK US →</a>';
+    hero.appendChild(actions);
+  }
+  var sticky=document.createElement('nav');sticky.className='pj-mobile-sticky';sticky.setAttribute('aria-label','Quick actions');
+  sticky.innerHTML='<a href="#pj-playlist">♫ LISTEN</a><a href="https://wa.me/34696092224">BOOK US →</a>';document.body.appendChild(sticky);
+  if(contact&&'IntersectionObserver' in window){new IntersectionObserver(function(e){sticky.classList.toggle('pj-hidden',e[0].isIntersecting);},{threshold:.08}).observe(contact);}
 })();
 </script>
 </body>

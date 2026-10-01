@@ -309,6 +309,14 @@ img{max-width:100%}
   iframe{max-width:100%;height:300px!important}
 }
 </style>
+
+<style id="pj-logo-fix">
+.pj-spin-logo{cursor:pointer;object-fit:contain!important;transition:transform .9s cubic-bezier(.22,.9,.28,1)!important}
+.pj-spin-logo.pj-spinning{transform:rotate(360deg) scale(1)!important}
+@media(max-width:600px){
+  .pj-who .pj-gallery .pj-spin-logo{width:100%!important;height:auto!important;aspect-ratio:1/1;object-fit:contain!important;background:#000!important;padding:7%!important;border-radius:50%!important}
+}
+</style>
 </head>
 <body>
 <main style="width:100%;max-width:1400px;margin:0 auto;background:#0b0b0b;position:relative;font-family:'Space Grotesk',sans-serif;color:#f7f5f0;overflow:hidden;box-sizing:border-box;">
@@ -317,7 +325,7 @@ img{max-width:100%}
   <div style="padding:clamp(28px,5vw,56px) clamp(20px,5vw,64px) 0 clamp(20px,5vw,64px);position:relative;box-sizing:border-box;">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px;">
       <div style="display:flex;align-items:center;gap:20px;">
-        <a href="https://www.mixcloud.com/PJDJs/"><img src="assets/asset-000.jpg" alt="PJ.DJS logo" width="622" height="496" style="width:clamp(64px,10vw,92px);height:clamp(64px,10vw,92px);object-fit:contain;background:#0b0b0b;border-radius:50%;border:3px solid #f7f5f0;flex-shrink:0;"></a>
+        <img src="assets/asset-000.jpg" alt="PJ.DJS logo" width="622" height="496" style="width:clamp(64px,10vw,92px);height:clamp(64px,10vw,92px);object-fit:contain;background:#0b0b0b;border-radius:50%;border:3px solid #f7f5f0;flex-shrink:0;" class="pj-spin-logo" role="button" tabindex="0" aria-label="Spin PJ.DJS logo">
         <div>
           <div style="font-family:'Anton',sans-serif;font-size:clamp(32px,7vw,52px);letter-spacing:1px;line-height:0.9;">PJ.DJS</div>
           <div style="display:inline-block;background:#ff2f92;color:#0b0b0b;font-family:'Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:2px;padding:5px 12px;transform:rotate(-2deg);margin-top:8px;">BARCELONA</div>
@@ -569,7 +577,7 @@ img{max-width:100%}
         <a href="https://www.mixcloud.com/PJDJs/" style="font-family:'Anton',sans-serif;font-size:26px;color:#f7f5f0;display:block;">mixcloud.com/PJDJs</a>
       </div>
       <div style="flex:1 1 140px;text-align:right;">
-        <a href="https://www.mixcloud.com/PJDJs/" style="display:block;margin-left:auto;width:80px;"><img src="assets/asset-000.jpg" alt="PJ.DJS logo" width="622" height="496" style="width:80px;height:80px;object-fit:contain;background:#0b0b0b;border-radius:50%;border:3px solid #f7f5f0;display:block;"></a>
+        <img src="assets/asset-000.jpg" alt="PJ.DJS logo" width="622" height="496" style="width:80px;height:80px;object-fit:contain;background:#0b0b0b;border-radius:50%;border:3px solid #f7f5f0;display:block;" class="pj-spin-logo" role="button" tabindex="0" aria-label="Spin PJ.DJS logo">
         <div style="font-family:'Permanent Marker',cursive;font-size:20px;color:#9b5cff;margin-top:10px;transform:rotate(-2deg);">love, PJ.DJS</div>
       </div>
     </div>
@@ -659,6 +667,16 @@ img{max-width:100%}
   var sticky=document.createElement('nav');sticky.className='pj-mobile-sticky';sticky.setAttribute('aria-label','Quick actions');
   sticky.innerHTML='<a href="#pj-playlist">♫ LISTEN</a><a href="https://wa.me/34696092224">BOOK US →</a>';document.body.appendChild(sticky);
   if(contact&&'IntersectionObserver' in window){new IntersectionObserver(function(e){sticky.classList.toggle('pj-hidden',e[0].isIntersecting);},{threshold:.08}).observe(contact);}
+})();
+</script>
+
+<script id="pj-logo-spin">
+(function(){
+ function spin(el){el.classList.remove('pj-spinning');void el.offsetWidth;el.classList.add('pj-spinning');setTimeout(function(){el.classList.remove('pj-spinning');},950);}
+ document.querySelectorAll('.pj-spin-logo').forEach(function(el){
+   el.addEventListener('click',function(e){e.preventDefault();spin(el);});
+   el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();spin(el);}});
+ });
 })();
 </script>
 </body>
